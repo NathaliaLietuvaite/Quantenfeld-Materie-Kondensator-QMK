@@ -1,4 +1,4 @@
-# Der Quanten-Materie-Kondensator (QMK)
+# Der Quantenfeld-Materie-Kondensator (QMK)
 
 **Stand: 12. August 2025**
 
