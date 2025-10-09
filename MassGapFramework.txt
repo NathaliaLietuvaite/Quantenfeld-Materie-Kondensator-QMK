@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
 # Mass Gap Framework: A Rigorous Computational Blueprint
 
 **Author (Theory):** Sonia Kris (@Sonyak789)
@@ -36,7 +34,7 @@ This blueprint serves as a robust foundation for bridging the gap between a bril
 heuristic idea and a rigorously validated, community-ready scientific instrument.
 
 ---
-"""
+
 
 import logging
 from typing import Dict, List, Protocol, Tuple, Optional
