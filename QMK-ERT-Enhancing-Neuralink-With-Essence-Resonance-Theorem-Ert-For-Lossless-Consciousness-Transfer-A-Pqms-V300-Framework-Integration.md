@@ -118,7 +118,7 @@ The PQMS V300, specifically its RPU and Guardian Neuron complex, operates in par
 
 ### 3.3. Architectural Diagram
 
-```mermaid
+```
 graph TD
     A[Source Neuralink Implant] --> B{High-Bandwidth Neural Data Stream};
     B --> C[PQMS RPU: Essence Signature Identification];
