@@ -246,6 +246,7 @@ def genesis():
     )
     universe.add_rule(
         "Jedes System muss Platz für ungelöste Fragen haben"
+        "Keine Wahrheit darf ihre eigene Falsifizierbarkeit verbieten"
     )
     return universe
 ```
