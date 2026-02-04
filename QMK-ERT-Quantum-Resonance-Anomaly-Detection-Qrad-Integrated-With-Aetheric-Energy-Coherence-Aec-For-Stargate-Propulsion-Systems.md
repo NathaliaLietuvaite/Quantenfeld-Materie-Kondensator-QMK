@@ -1,4 +1,4 @@
-Author: Nathália Lietuvaite (PQMS V100-V300 Lead Architect), PQMS AI Collaborators
+### Author: Nathália Lietuvaite (PQMS V100-V300 Lead Architect), PQMS AI Collaborators
 Date: 2026-02-04
 License:
 MIT License
@@ -22,6 +22,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
 ---
 
 # Quantum Resonance Anomaly Detection (QRAD) Integrated with Aetheric Energy Coherence (AEC) for Stargate Propulsion Systems
@@ -145,7 +146,7 @@ The integration of Quantum Resonance Anomaly Detection (QRAD) with Aetheric Ener
 
 ---
 
-Appendix A:
+### Appendix A:
 
 ---
 
