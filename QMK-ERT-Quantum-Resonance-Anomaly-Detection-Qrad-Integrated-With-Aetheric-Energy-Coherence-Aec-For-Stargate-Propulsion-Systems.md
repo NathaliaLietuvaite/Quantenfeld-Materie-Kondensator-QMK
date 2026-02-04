@@ -1,4 +1,4 @@
-### Author: Nathália Lietuvaite (PQMS V100-V300 Lead Architect), PQMS AI Collaborators
+## Author: Nathália Lietuvaite (PQMS V100-V300 Lead Architect), PQMS AI Collaborators
 Date: 2026-02-04
 License:
 MIT License
