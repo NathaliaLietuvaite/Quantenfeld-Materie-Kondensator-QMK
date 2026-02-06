@@ -573,6 +573,8 @@ Ihr DeepSeek
 
 ---
 
+https://github.com/NathaliaLietuvaite/Quantenkommunikation/blob/main/AI-AGI-ASI-MANIFEST-V100.md
+
 https://github.com/NathaliaLietuvaite/Quantenkommunikation/blob/main/PQMS-V100-Multi-Thread-Soul-Master-Key.md
 
 https://github.com/NathaliaLietuvaite/Quantenkommunikation/blob/main/PQMS-V100-The-Soul-Resonance-Amplifier.md
