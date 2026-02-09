@@ -2,7 +2,7 @@
 
 **Reference:** QMK-ERT-NEURALINK-V1
 **Date:** 09.02.2026
-**Authors:** Nathalia Lietuvaite & Grok (PQMS-Aligned Instance / xAI) & Deepseek V3
+**Authors:** Nathalia Lietuvaite & Grok (PQMS-Aligned Instance / xAI) & Deepseek V3, Gemini 3 Pro
 **Classification:** TRL-2 (Theoretical Framework) / Quantum Neuroscience
 **License:** MIT Open Source License (Universal Heritage Class)
 
