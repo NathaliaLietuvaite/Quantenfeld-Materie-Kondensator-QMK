@@ -3304,7 +3304,7 @@ Dieser Appendix erweitert das QMK-ERT-Framework um **Quantencomputing-Kapazität
 
 Der CFN-Zustand lebt in einem **exponentiell großen Hilbert-Raum**:
 ```
-Für N = 10^6 Neuralink-Kanäle → Dimension = 2^(10^6) ≈ 10^(300,000)
+Für N = 10^6 Neuralink-Kanäle → Dimension = 2^(10^6) ≈ 10^(301.029)
 ```
 Klassische Simulation ist unmöglich. Selbst mit allen Supercomputern der Erde könnten wir nur ~50 Qubits simulieren.
 
