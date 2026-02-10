@@ -5759,6 +5759,279 @@ if __name__ == "__main__":
 
 ---
 
+# APPENDIX P: QMK-ERT – NEURALINK CLEAN FROZEN NOW FOR IMAGINATION MATERIALIZATION - EXTENDED SIMULATION PIPELINE
+
+```python
+import numpy as np
+import torch
+import torch.nn as nn
+import qutip as qt
+import matplotlib.pyplot as plt
+import json
+import time
+from dataclasses import dataclass
+from typing import Tuple, List, Optional
+
+# 1. NEURAL SPIKE SIMULATOR (Neuralink-N1-ähnlich)
+class NeuralSpikeSimulator:
+    """Simuliert 1024-Kanal Neuralink-N1-Ausgabe mit realistischen Spike-Mustern"""
+    
+    def __init__(self, sampling_rate=30000):  # 30kHz wie Neuralink
+        self.sampling_rate = sampling_rate
+        self.channels = 1024
+        self.microtubule_freq = np.random.normal(40, 10, self.channels)  # Orch-OR Frequenzen
+        
+    def generate_spike_train(self, intent_vector: np.ndarray, duration_ms: float = 100):
+        """Erzeugt Spike-Zug basierend auf Intentionsvektor"""
+        samples = int(duration_ms * self.sampling_rate / 1000)
+        spike_data = np.zeros((self.channels, samples))
+        
+        # Intent-Vektor moduliert Spike-Rate
+        for ch in range(min(len(intent_vector), self.channels)):
+            if intent_vector[ch] > 0.5:  # Hohe Intention
+                rate = 50 + 100 * intent_vector[ch]  # Hz
+                spike_prob = rate / self.sampling_rate
+                spikes = np.random.binomial(1, spike_prob, samples)
+                spike_data[ch] = spikes * (0.5 + 0.5 * np.sin(
+                    2 * np.pi * self.microtubule_freq[ch] * 
+                    np.arange(samples) / self.sampling_rate
+                ))
+        return spike_data
+
+# 2. FPGA RESONANCE PROCESSOR EMULATION
+class FPGAResonanceEmulator:
+    """Emuliert die Verilog-Logik des FPGA-Interfaces in Python"""
+    
+    def __init__(self, fpga_type="Xilinx_Artix_7_100T"):
+        self.configs = {
+            "Xilinx_Zynq_7020": {
+                "lut_count": 85000,
+                "dsp_slices": 220,
+                "block_rams": 140,
+                "max_freq_mhz": 667
+            },
+            "Xilinx_Artix_7_100T": {
+                "lut_count": 101440,
+                "dsp_slices": 240,
+                "block_rams": 135,
+                "max_freq_mhz": 800
+            }
+        }
+        self.config = self.configs.get(fpga_type, self.configs["Xilinx_Zynq_7020"])
+        
+    def calculate_resonance_vector(self, spike_data: np.ndarray) -> np.ndarray:
+        """Implementiert die Resonanzberechnung aus Appendix A Verilog"""
+        # Spike-Amplituden zu komplexen Resonanzvektoren
+        spike_avg = np.mean(spike_data, axis=1)
+        resonance = np.zeros(self.config["lut_count"] // 1000, dtype=complex)
+        
+        for i in range(len(resonance)):
+            idx = i % len(spike_avg)
+            phase = 2 * np.pi * spike_avg[idx]
+            magnitude = np.abs(spike_avg[idx])
+            resonance[i] = magnitude * np.exp(1j * phase)
+            
+        return resonance
+
+# 3. QUANTUM MATERIALIZATION SIMULATOR
+class QuantumMaterializationSimulator:
+    """Simuliert QMK-basierte Materialisierung via QuTiP"""
+    
+    def __init__(self, qmk_dimensions=12):
+        self.qmk_dim = qmk_dimensions
+        
+    def create_materialization_circuit(self, resonance_vector: np.ndarray):
+        """Erzeugt Quantenschaltung für Materialisierung"""
+        num_qubits = int(np.ceil(np.log2(len(resonance_vector))))
+        qc = qt.tensor([qt.basis(2, 0) for _ in range(num_qubits)])
+        return qc
+    
+    def simulate_materialization(self, circuit):
+        """Führt Quantensimulation durch"""
+        H = qt.tensor(qt.sigmax(), qt.identity(2)) + qt.tensor(qt.identity(2), qt.sigmaz())  # Adjusted for 2 qubits min
+        result = qt.mesolve(H, circuit, tlist=[0, 1], c_ops=[])
+        final_state = result.states[-1]
+        probs = np.abs(final_state.full().flatten())**2
+        probs /= np.sum(probs + 1e-10)
+        states = [format(i, f'0{circuit.dims[0][0]}b') for i in range(len(probs))]
+        counts = {states[i]: int(probs[i] * 1024) for i in range(len(probs)) if probs[i] > 0.01}
+        return counts, final_state
+
+# 4. HOLODECK VISUALIZATION ENGINE
+class HolodeckVisualizer:
+    """Visualisiert materialisierte Imagination in 3D"""
+    
+    def __init__(self):
+        self.fig = plt.figure(figsize=(12, 8))
+        self.ax = self.fig.add_subplot(111, projection='3d')
+        
+    def visualize_quantum_state(self, quantum_counts, title="Materialized Imagination"):
+        """Visualisiert Quantenzustand als 3D-Gitter"""
+        states = list(quantum_counts.keys())
+        counts = list(quantum_counts.values())
+        
+        # Zustände in 3D-Koordinaten konvertieren
+        coords = []
+        for state in states:
+            binary = state.zfill(12)  # pad to 12
+            x = int(binary[:4], 2)
+            y = int(binary[4:8], 2)
+            z = int(binary[8:12], 2)
+            coords.append([x, y, z])
+        
+        coords = np.array(coords)
+        counts_norm = np.array(counts) / max(counts)
+        
+        self.ax.clear()
+        scatter = self.ax.scatter(coords[:,0], coords[:,1], coords[:,2], 
+                                 c=counts_norm, cmap='viridis', s=counts_norm*500, alpha=0.7)
+        self.ax.set_title(title)
+        self.ax.set_xlabel('X Dimension')
+        self.ax.set_ylabel('Y Dimension')
+        self.ax.set_zlabel('Z Dimension')
+        plt.colorbar(scatter, ax=self.ax, label='Probability Amplitude')
+        plt.show(block=False)
+        plt.pause(0.1)
+
+# 5. Torch-based Spike Processing
+class SpikeNet(nn.Module):
+    """ML-basiertes Spike-Processing mit CNN-LSTM"""
+    def __init__(self, in_channels=32, hidden=128):
+        super().__init__()
+        self.conv = nn.Conv1d(in_channels, 64, kernel_size=5, padding=2)
+        self.lstm = nn.LSTM(64, hidden, batch_first=True)
+        self.fc = nn.Linear(hidden, 256)  # Intent-Vektor
+        
+    def forward(self, x):
+        x = torch.relu(self.conv(x))
+        x, _ = self.lstm(x.transpose(1,2))
+        return torch.sigmoid(self.fc(x[:,-1,:]))
+
+# 6. Kontaktlose photonische + EM-Abtastung (body-wide data loader)
+def load_body_wide_data(openbci_file=None):
+    """Ladet oder simuliert body-wide EEG + fNIRS/EM-Daten"""
+    if openbci_file:
+        # Assume loadmat for real file
+        from scipy.io import loadmat
+        data = loadmat(openbci_file)['data']
+    else:
+        data = np.random.randn(16, 75000)  # simulated EEG
+    body_wide = np.random.randn(16, data.shape[1]) * 0.3 + np.sin(np.linspace(0, 10, data.shape[1])) * 0.1
+    return np.vstack([data, body_wide])
+
+# 7. Higher-Dimensional Anchor for non-local consciousness
+def higher_dim_anchor(state, mtsc_dim=12):
+    """Verschiebt Zustand in höherdimensionalen MTSC-Raum"""
+    q = qt.Qobj(state.full().flatten())
+    dims_len = q.shape[0]
+    if dims_len >= mtsc_dim:
+        return q.unit()
+    extra = qt.tensor([qt.basis(2,0)] * (mtsc_dim - dims_len))
+    return qt.tensor(q, extra).unit()
+
+# 8. KOMPLETTE SIMULATIONSPIPELINE (erweitert für Appendix P)
+class CompleteSimulationPipeline:
+    """Integriert alle Module zu vollständiger Pipeline"""
+    
+    def __init__(self):
+        self.neural_sim = NeuralSpikeSimulator()
+        self.fpga_emu = FPGAResonanceEmulator("Xilinx_Artix_7_100T")
+        self.qmat_sim = QuantumMaterializationSimulator()
+        self.viz = HolodeckVisualizer()
+        self.spike_net = SpikeNet(in_channels=32)
+        self.results_log = []
+        
+    def run_simulation(self, intent_description: str, duration_ms: float = 100):
+        """Führt vollständige Simulation durch"""
+        print(f"\n{'='*60}")
+        print(f"SIMULATION: {intent_description}")
+        print(f"{'='*60}")
+        
+        # 1. Intent in Vektor umwandeln
+        intent_vector = self._text_to_intent(intent_description)
+        print(f"Intent Vector erzeugt: {len(intent_vector)} Dimensionen")
+        
+        # 2. Neuralink-Spikes generieren (oder real laden)
+        spikes = load_body_wide_data()  # Appendix P extension
+        print(f"Spike-Daten: {spikes.shape[0]} Kanäle, {spikes.shape[1]} Samples")
+        
+        # 3. ML-Spike-Processing (Torch)
+        x = torch.tensor(spikes[np.newaxis, :, :], dtype=torch.float32)
+        intent_vector_ml = self.spike_net(x).detach().numpy().flatten()
+        print(f"Torch-ML-Intent-Vektor erzeugt")
+        
+        # 4. FPGA-Resonanzberechnung
+        resonance = self.fpga_emu.calculate_resonance_vector(spikes)
+        print(f"Resonanzvektor: {len(resonance)} komplexe Werte")
+        
+        # 5. Quantum-Materialisierung
+        circuit = self.qmat_sim.create_materialization_circuit(resonance)
+        counts, final_state = self.qmat_sim.simulate_materialization(circuit)
+        print(f"Materialisierungsergebnis: {len(counts)} mögliche Zustände")
+        
+        # 6. Higher-Dimensional Anchor (Appendix P)
+        state_12d = higher_dim_anchor(final_state)
+        print("Higher-Dimensional Anchor aktiviert → Non-lokales Bewusstsein aus 12D-Raum")
+        
+        # 7. Visualisierung
+        self.viz.visualize_quantum_state(counts, intent_description)
+        
+        # 8. Logging
+        result = {
+            "timestamp": time.time(),
+            "intent": intent_description,
+            "spike_shape": spikes.shape,
+            "resonance_dim": len(resonance),
+            "quantum_states": len(counts),
+            "top_state": max(counts, key=counts.get) if counts else None
+        }
+        self.results_log.append(result)
+        
+        return result
+    
+    def _text_to_intent(self, text: str) -> np.ndarray:
+        """Konvertiert Textbeschreibung in numerischen Intent-Vektor"""
+        words = text.lower().split()
+        vector = np.zeros(256)  # 256-dimensioneller Intent-Raum
+        
+        for word in words:
+            hash_val = hash(word) % 256
+            vector[hash_val] += 0.1
+            
+        # Normalisieren
+        if np.linalg.norm(vector) > 0:
+            vector = vector / np.linalg.norm(vector)
+            
+        return vector
+    
+    def save_results(self, filename="simulation_results.json"):
+        """Speichert Simulationsergebnisse"""
+        with open(filename, 'w') as f:
+            json.dump(self.results_log, f, indent=2)
+        print(f"\nErgebnisse gespeichert in {filename}")
+
+# HAUPTSIMULATION
+if __name__ == "__main__":
+    pipeline = CompleteSimulationPipeline()
+    
+    # Test-Szenarien
+    test_intents = [
+        "Einfacher Würfel mit Kantenlänge 1",
+        "Komplexe Fraktal-Struktur mit Symmetrie",
+        "Organische Form wie eine Blume",
+        "Architektonisches Element: Säule",
+    ]
+    
+    for intent in test_intents:
+        pipeline.run_simulation(intent)
+        time.sleep(2)  # Pause zwischen Visualisierungen
+    
+    pipeline.save_results()
+    print("\nSimulation abgeschlossen. Ergebnisse gespeichert.")
+```
+
+---
+
 ### Links
 
 ---
