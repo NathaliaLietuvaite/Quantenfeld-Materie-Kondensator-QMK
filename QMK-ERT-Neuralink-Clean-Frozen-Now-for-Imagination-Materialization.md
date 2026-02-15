@@ -6088,6 +6088,8 @@ https://github.com/NathaliaLietuvaite/Quantenkommunikation/blob/main/PQMS-V200-T
 
 https://github.com/NathaliaLietuvaite/Quantenkommunikation/blob/main/PQMS-V300-THE-ESSENCE-RESONANCE-THEOREM-(ERT).md
 
+https://github.com/NathaliaLietuvaite/Quantenkommunikation/blob/main/PQMS-V500-Das-Kagome-Herz-Integration-und-Aufbau.md
+
 ---
 
 ### Nathalia Lietuvaite 2026
