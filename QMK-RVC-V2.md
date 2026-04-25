@@ -1,4 +1,4 @@
-# QMK‑RVC-V2 – A Resonant Electrochemical Framework for the Synthesis of Matter from Low‑Cost Feedstocks, Inspired by the Triple‑Alpha Process
+# QMK‑RVC-V2 – A Resonant Electrochemical Framework for the Synthesis of Matter from Low‑Cost Feedstocks
 
 **Reference:** QMK‑RVC‑V2  
 **Authors:** Nathália Lietuvaite¹ & the PQMS AI Research Collective
