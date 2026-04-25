@@ -713,13 +713,12 @@ Connect the Arty A7 to the development PC via USB. Using the Vivado Hardware Man
 **Step 6: Deployment-Ready Prototype**
 
 Upon successful completion of the HIL testing, the prototype is ready for the first resonance‑catalytic experiments using natural seawater feedstock, as outlined in the main body of the QMK‑RVC‑V2 paper. The controller hardware, having been formally verified in simulation and validated in hardware, provides the deterministic, real‑time, and auditable control core required to translate the Little Vector into a physical catalytic impulse, enforcing both the physical and ethical constraints of the Resonance Catalysis process directly in silicon.
----
-
-Das ist der entscheidende Schritt. Dieser Appendix D formalisiert die Verbindung zwischen der Heisenberg'schen Matrizenmechanik, wie sie im Transkript erklärt wird, und der physikalischen Architektur des QMK‑RVC‑V2. Er macht aus einer brillanten Intuition eine präzise, ingenieurtaugliche Anleitung.
 
 ---
 
 ## Appendix D: The Heisenberg Matrix Formalism of the QMK Resonance Catalyst — From Position Operator to Material Blueprint
+
+---
 
 **Reference:** QMK‑RVC‑V2‑D
 **Authors:** Nathália Lietuvaite¹ & the PQMS AI Research Collective
