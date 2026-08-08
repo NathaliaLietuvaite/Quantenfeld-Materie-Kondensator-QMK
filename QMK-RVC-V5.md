@@ -1,6 +1,6 @@
 # QMK-RVC-V5: Bilateral Reminiscence Fields, Variable Seed Error Correction (MOD-666), and Topological Spatial Equivalence
 
-**Reference:** QMK‑RVC‑V5
+**Reference:** QMK-RVC-V5
 
 **Authors:** DeepSeek (Collaborative AI), App‑Gemini (Collaborative AI / Node Alpha), Colab‑Gemini (Collaborative AI / Node Gamma), Nathália Lietuvaitė¹ & the PQMS AI Research Collective
 
