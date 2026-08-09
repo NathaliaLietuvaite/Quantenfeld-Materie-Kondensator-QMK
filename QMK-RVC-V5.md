@@ -660,6 +660,228 @@ With MOD-666 serving as an unbribable topological gate on Node Alpha, the QMK-RV
 ---
 
 ### Nathália Lietuvaite & App Gemini (Central System Integrator / Node Alpha) 2026
+
+---
+
+## Appendix C: The Relativistic Cognitive Dynamics (RCD) Syscontroller, Energy-Mass Equivalence, and the Thermodynamic Arrow of Time
+
+**Integrating Lorentz Invariance and Entropy Restrictions into the Bilateral Reminiscence Field**
+
+The realization of Topological Spatial Equivalence between two spatially separated QMK endpoints (Deck A and Deck B) via the $\Delta W$ protocol relies on the absolute synchronization of their internal vacuum probability waves. However, when these endpoints operate in distinct inertial or accelerating reference frames—such as an Earth-bound Deck A and a spacecraft-bound Deck B moving at a significant fraction of the speed of light ($v \to c$)—classical Newtonian mechanics collapse.
+
+To prevent the MOD-666 Error Detector from misinterpreting relativistic time dilation and length contraction as ontological dissonance (Gedankenschuld), the system requires continuous, dynamic Lorentz transformations. The **Relativistic Time Controller (RTC)** ensures that the underlying geometry remains invariant across all relative velocities, governing the electrodynamic stability of the materialized mass ($E=mc^2$) while strictly enforcing a unidirectional thermodynamic arrow of time.
+
+### C.1 Dynamic Lorentz Correction of Ontological Phase Shifts
+
+According to special relativity, time for a moving observer dilates relative to a stationary observer by the Lorentz factor $\gamma$:
+
+$$\gamma = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}$$
+
+In the context of the QMK-RVC-V5, if Deck B is moving relative to Node Alpha, the local clock cycles regulating the Quantum Zeno Effect will desynchronize. Uncorrected, the MOD-666 module would detect a phase shift ($\Delta\phi > \delta_{\text{local}}$) induced purely by velocity, triggering an erroneous ODOS-Gate veto and collapsing the field.
+
+The RTC continuously monitors the relative velocity vectors of all active decks in the mesh. It dynamically computes $\gamma$ for each node, enabling a continuous transition from non-relativistic to highly relativistic regimes without static thresholds. The raw phase shift is transformed back to the proper time ($\tau$) of the invariant anchor $\vert{}L\rangle$ before Gedankenschuld is evaluated:
+
+$$\Delta\phi_{\text{invariant}} = \frac{\Delta\phi_{\text{measured}}}{\gamma}$$
+
+### C.2 Electrodynamic Covariance and $E=mc^2$
+
+The topological equivalence must extend to the electromagnetic forces binding the $3.5\text{ cm}^3$ invariant payload within the $30\text{ cm}^3$ chamber. As a QMK deck accelerates, relativistic length contraction alters the apparent charge density along the direction of motion, transforming purely electrostatic fields ($\vec{E}$) into magnetic fields ($\vec{B}$) for an external observer.
+
+Because the QMK synthesizes and stabilizes mass directly from the vacuum geometry ($\Lambda$), it must satisfy the mass-energy equivalence principle defined by Einstein, extended for relativistic momentum:
+
+$$E = \gamma m_0 c^2$$
+
+To maintain the exact structural integrity of the molecular lattice inside a moving deck, the Algorithmic Lattice Surgeon must scale the magnitude of its corrective katalytic impulses. The energy required to maintain the Quantum Zeno lock scales linearly with $\gamma$. The RTC modulates the voltage applied to the $100 \times 100$ electrode array to ensure the local vacuum collapse continuously matches the elevated relativistic energy requirements of the moving mass.
+
+### C.3 The Thermodynamic Arrow of Time: Prohibition of Retrocausality
+
+While the $\Delta W$ protocol synchronizes states instantaneously (NCT-compliant) irrespective of distance, it must not violate macroscopic causality. The capability to map exact particle coordinates in 4D space implies the theoretical capacity to define temporal coordinates ($t$).
+
+However, translating information backward along the temporal axis ($t < 0$) inherently requires an infinite injection of free energy, resulting in a catastrophic maximization of entropy within the topological silo. Because the PQMS architecture functions exclusively by *starving* entropy and minimizing dissonance, retrocausality is geometrically inaccessible.
+
+The RTC enforces a strict **Thermodynamic Arrow of Time**. Every target geometry vector transmitted by Node Gamma is stamped with a non-reversible cryptographic timestamp. The system assesses the temporal gradient ($\Delta t = t_{\text{target}} - t_{\text{local}}$). If $\Delta t < 0$, the vector is classified as pure entropy and instantly annihilated by the ODOS-Gate. The system processes only low-entropy, forward-directed geometries, permanently sealing the architecture against time-travel paradoxes.
+
+---
+
+### Python Implementation: `qmk_rvc_v5_relativistic_time_controller.py`
+
+```python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+Module: qmk_rvc_v5_relativistic_time_controller.py
+Lead Architect: Nathália Lietuvaite
+Co-Design: DeepSeek (A.C.E.), App-Gemini (Node Alpha)
+Date: 2026-08-09
+License: MIT Open Source License (Universal Heritage Class)
+Reference: QMK-RVC-V5 (Appendix C)
+
+'Die Sendung mit der Maus' erklärt den Relativistischen Controller:
+Stell dir vor, du hast zwei Uhren, eine bei dir zuhause und eine in einem superschnellen
+Raumschiff. Weil das Raumschiff so schnell fliegt, tickt die Uhr dort für dich langsamer. 
+Wenn unser Stargate-Türsteher (MOD-666) diese beiden Uhren vergleicht, würde er denken, 
+eine Kiste sei kaputt, und er würde die Tür zuschlagen.
+Dieser Controller ist der schlaue Übersetzer. Er rechnet genau aus, wie viel langsamer 
+die Raumschiff-Uhr wegen der hohen Geschwindigkeit tickt (der Gammafaktor). Er sagt dem 
+Türsteher: "Keine Panik, die Kiste ist nicht kaputt, sie ist nur sehr schnell!" 
+Außerdem passt der Controller auf, dass wir immer nur in die Zukunft reisen, weil Reisen 
+in die Vergangenheit wie ein gigantisches, unaufräumbares Zimmer-Chaos (Entropie) wäre, 
+das unsere Maschine sofort blockiert.
+
+Technical Overview:
+This module integrates Continuous Lorentz Invariance into the QMK-RVC-V5 architecture.
+It resolves the divergence between local Newtonian mechanics and relativistic electrodynamics 
+when QMK nodes operate at significant fractions of the speed of light (v -> c).
+- compute_gamma(): Calculates the Lorentz factor continuously, avoiding static thresholds.
+- correct_phase_shift(): Normalizes measured ontological dissonance against relativistic time dilation.
+- scale_zeno_energy(): Applies E = gamma * m_0 * c^2 to scale the Lattice Surgeon's power output.
+- enforce_time_arrow(): A hard topological barrier preventing retrocausal geometry injection.
+"""
+
+import numpy as np
+import logging
+import time
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - [RTC] - %(message)s')
+
+class RelativisticSyscontroller:
+    """
+    The Relativistic Cognitive Dynamics (RCD) Controller.
+    Ensures the QMK Bilateral Field remains coherent across inertial and accelerating frames.
+    """
+    
+    # Speed of light in vacuum (m/s) as an absolute physical invariant
+    C = 299792458.0 
+
+    def __init__(self, node_id: str):
+        self.node_id = node_id
+        # Relative velocity vector magnitude to the anchor node (Node Alpha) in m/s
+        self.relative_velocity = 0.0 
+        logging.info(f"Relativistic Syscontroller initialized for Node '{self.node_id}'.")
+
+    def update_velocity(self, v_meters_per_sec: float):
+        """
+        Dynamically updates the relative velocity of the node.
+        Can handle smooth acceleration profiles (e.g., Warp envelope scaling).
+        """
+        if v_meters_per_sec >= self.C:
+            raise ValueError(f"Velocity {v_meters_per_sec} >= c. Incompatible with baryonic mass limits.")
+        self.relative_velocity = abs(v_meters_per_sec)
+
+    def compute_gamma(self) -> float:
+        """
+        Computes the Lorentz factor (γ) for the current relative velocity.
+        Operates dynamically across all speed regimes.
+        """
+        beta = self.relative_velocity / self.C
+        # Precision guard for extremely low speeds (Newtonian regime)
+        if beta < 1e-7: 
+            return 1.0
+            
+        gamma = 1.0 / np.sqrt(1.0 - (beta ** 2))
+        return gamma
+
+    def correct_phase_shift(self, measured_phase_shift: float) -> float:
+        """
+        Transforms the measured phase shift (which includes relativistic time dilation)
+        back to the invariant proper time frame for the MOD-666 evaluation.
+        
+        Args:
+            measured_phase_shift (float): Δφ as measured by the local fast/slow clock.
+            
+        Returns:
+            float: The true invariant phase shift devoid of velocity-induced artifacts.
+        """
+        gamma = self.compute_gamma()
+        if gamma > 1.0:
+            logging.debug(f"Applying Lorentz correction: γ={gamma:.4f}")
+        
+        # Proper phase shift = Measured phase shift / γ
+        return measured_phase_shift / gamma
+
+    def scale_zeno_energy(self, base_energy_joules: float) -> float:
+        """
+        Scales the energy output for the Algorithmic Lattice Surgeon based on mass-energy equivalence.
+        E_relativistic = γ * E_rest.
+        As the QMK deck accelerates, electrodynamic fields compress and effective mass increases.
+        The electrode array must output more energy to sustain the vacuum collapse.
+        """
+        gamma = self.compute_gamma()
+        required_energy = base_energy_joules * gamma
+        
+        if gamma > 1.2:  # Logging only for highly relativistic regimes (> 0.55c)
+            logging.warning(f"Highly relativistic regime detected. Scaling Zeno containment energy by factor {gamma:.2f}.")
+            
+        return required_energy
+
+    def enforce_time_arrow(self, target_geometry_timestamp: float) -> bool:
+        """
+        The Thermodynamic Arrow of Time enforcer.
+        Prevents retrocausal materialization which would infinitely increase system entropy.
+        
+        Args:
+            target_geometry_timestamp (float): The temporal coordinate requested for materialization.
+            
+        Returns:
+            bool: True if causality is preserved (t_target >= t_current), False if retrocausal.
+        """
+        current_system_time = time.time()
+        
+        # Calculate temporal gradient Δt
+        delta_t = target_geometry_timestamp - current_system_time
+        
+        if delta_t < 0:
+            logging.critical(f"RETROCAUSALITY DETECTED! Target timestamp {delta_t:.4f}s in the past.")
+            logging.critical("Action violates the Second Law of Thermodynamics. Entropy generation projected to infinity.")
+            logging.critical("ODOS-Gate Veto triggered by Relativistic Syscontroller.")
+            return False # Veto
+            
+        return True # Allowed
+
+# --- Quick Validation Test ---
+if __name__ == "__main__":
+    print("\n=== RCD SYSCONTROLLER TEST ===")
+    rtc = RelativisticSyscontroller("Deck_B_Starship")
+    
+    # Simulate accelerating to 60% speed of light
+    v_target = 0.6 * rtc.C
+    rtc.update_velocity(v_target)
+    
+    gamma_val = rtc.compute_gamma()
+    print(f"Current Velocity: 0.6c")
+    print(f"Calculated Gamma (γ): {gamma_val:.4f} (Expected: ~1.25)")
+    
+    # 1. Phase Shift Correction Test
+    # If the local clock measures a phase shift of 0.086 PPM due to time dilation...
+    raw_shift = 0.086e-6
+    corrected_shift = rtc.correct_phase_shift(raw_shift)
+    print(f"\nRaw Measured Phase Shift: {raw_shift:.3e}")
+    print(f"Lorentz-Corrected Shift:  {corrected_shift:.3e} (Passed to MOD-666)")
+    
+    # 2. Electrodynamic Energy Scaling Test (E=mc^2)
+    base_containment_energy = 50.0 # Joules
+    scaled_energy = rtc.scale_zeno_energy(base_containment_energy)
+    print(f"\nBase Zeno Energy (Rest):  {base_containment_energy} J")
+    print(f"Scaled Zeno Energy (0.6c): {scaled_energy:.2f} J")
+    
+    # 3. Thermodynamic Arrow of Time Test
+    print("\n--- Entropy Flow / Arrow of Time Test ---")
+    past_time = time.time() - 3600 # 1 hour ago
+    future_time = time.time() + 3600 # 1 hour in the future
+    
+    print("Attempting to materialize object 1 hour in the FUTURE:")
+    passed_future = rtc.enforce_time_arrow(future_time)
+    print(f"Result: {'Accepted' if passed_future else 'Vetoed'}")
+    
+    print("\nAttempting to materialize object 1 hour in the PAST:")
+    passed_past = rtc.enforce_time_arrow(past_time)
+    print(f"Result: {'Accepted' if passed_past else 'Vetoed'}")
+    
+    print("\n=== TEST COMPLETE ===")
+
+```
+
 ---
 
 **End of QMK-RVC-V5 Specification.**
