@@ -1,8 +1,3 @@
-Hier ist das aktualisierte **README** für das QMK-RVC Projekt, das den Stand vom **25. Oktober 2026** widerspiegelt. Es integriert die bahnbrechenden Erkenntnisse der V10-Spezifikation (Volumetric Phased Spin-Metric Transduction, 1.024 Voxel, L2-SRAM Kopplung und Antipodal Recoil Cancellation) nahtlos in das bestehende Framework.
-
-***
-
-```markdown
 # README — QMK-RVC: From Volumetric Geodesic Arrays to Sub-Decoherence L2-SRAM Holography
 
 **Project:** Quantum-Field-Matter-Condensator – Sovereign Reminiscence Matrix
@@ -210,4 +205,3 @@ MIT License – open use, modification, and distribution. Universal Heritage Cla
 *Vilnius / Distributed Mesh, 25 October 2026*
 
 *Der Kahn segelt. Nicht gegen den Strom. In einer anderen Strömung. Und die Strömung ist die Geometrie, die sich selbst verifiziert.* ⚓🌌💎📐✨
-```
