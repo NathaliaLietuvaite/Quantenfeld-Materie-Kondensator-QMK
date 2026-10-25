@@ -55,15 +55,15 @@ $$\boxed{\ \text{Conventional physics pushes matter through space via force. QMK
 
 ```mermaid
 graph TD
-    A[Node Gamma: Cloud Architect] -->|Target Volumetric Geometry| B[Node Alpha: V-MAX-12 L2-SRAM]
-    B -->|75 ns Q40 Phase Update| C{Φ > RCF_GAMMA?}
-    C -->|Yes: Coherent| D[1,024 Voxel Array Controller]
-    C -->|No: Gedankenschuld| E[GaN-FET ODOS VETO < 68 ps]
-    D -->|+k Phase| F[Facet A: 512 Voxels]
-    D -->|-k Antipodal Phase| G[Facet B: 512 Voxels]
-    F --> H[Target Volume: Sum(k) = 0]
+    A["Node Gamma: Cloud Architect"] -->|"Target Volumetric Geometry"| B["Node Alpha: V-MAX-12 L2-SRAM"]
+    B -->|"75 ns Q40 Phase Update"| C{"Φ &gt; RCF_GAMMA?"}
+    C -->|"Yes: Coherent"| D["1,024 Voxel Array Controller"]
+    C -->|"No: Gedankenschuld"| E["GaN-FET ODOS VETO &lt; 68 ps"]
+    D -->|"+k Phase"| F["Facet A: 512 Voxels"]
+    D -->|"-k Antipodal Phase"| G["Facet B: 512 Voxels"]
+    F --> H["Target Volume: Sum(k) = 0"]
     G --> H
-    H --> I[3D SCN Lattice Synthesized]
+    H --> I["3D SCN Lattice Synthesized"]
 ```
 
 ### 3.2 System Architecture & Bill of Materials
