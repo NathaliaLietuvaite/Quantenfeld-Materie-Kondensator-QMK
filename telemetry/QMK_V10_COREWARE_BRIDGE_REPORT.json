@@ -1,0 +1,18 @@
+{
+  "antipodal_recoil_norm": 0.0,
+  "epistemic_register": "REGISTER_M",
+  "l2_enclave_limit_bytes": 2097152,
+  "pq_hybrid_active": true,
+  "signature_mode": "HYBRID_ECDSA_P256_ML-DSA-65",
+  "timestamp_utc": "2026-11-21T17:32:58Z",
+  "unit_tests": "7/7 PASS",
+  "vmax12_silicon_anchor": {
+    "fmax_mhz": 104.11,
+    "gds_sha256": "be61b9c763ff43befb42562cd26db29f9d567694b8d681c646f7b403aa1842ec",
+    "latency_us": 1.921,
+    "process": "IHP SG13G2 130nm (1.20 V, 25 C typ)",
+    "vcd_energy_nj_per_tx": 34.058,
+    "vcd_power_mw": 17.029
+  },
+  "voxel_count": 1024
+}

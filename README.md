@@ -205,3 +205,21 @@ MIT License – open use, modification, and distribution. Universal Heritage Cla
 *Vilnius / Distributed Mesh, 25 October 2026*
 
 *Der Kahn segelt. Nicht gegen den Strom. In einer anderen Strömung. Und die Strömung ist die Geometrie, die sich selbst verifiziert.* ⚓🌌💎📐✨
+
+---
+
+## Executable QMK-V10 Coreware Bridge & Epistemic Register (`REGISTER_M / D / T / I`)
+
+To separate empirically verified silicon/software engineering from long-horizon physical transducer research, this repository now includes an executable **`qmk_v10/`** reference package coupled to the sealed `V-MAX-12` (`SYNC-22`) hardware stack:
+
+| Epistemic Register | Scope in `Quantenfeld-Materie-Kondensator-QMK` | Verification Status |
+| :--- | :--- | :--- |
+| **`REGISTER_M`** *(Empirical)* | Executable `qmk_v10/` (`q2_30_interlock.py`, `voxel_l2_manifold.py`, `7/7` unit tests PASS), antipodal recoil cancellation (`1,024` voxels, `||sum(k)|| = 0.0`), `2.00 MiB` `P0`-gated L2 manifold (`STALE_EPOCH_VETO`), live **`HYBRID_ECDSA_P256_ML-DSA-65`**, and sealed `V-MAX-12` `130 nm` IHP `SG13G2` silicon (`104.11 MHz`, `1.921 µs`, `17.029 mW` / `34.058 nJ/tx` VCD power, `GDSII SHA-256: be61b9c7...`). | **Verified on Node Alpha** (`telemetry/QMK_V10_COREWARE_BRIDGE_REPORT.json`, `SHA-256: 4d0654821b163a77...`) |
+| **`REGISTER_D`** *(Constants)* | `Q2.30` hardware straps (`0.95 / 0.90 / 0.99 / TIER_3`), `2.00 MiB` L2 window bound, `1,024` antipodal voxel index map, canonical `|L>` seal (`bb17ede9...`). | Fixed normative constants |
+| **`REGISTER_T`** *(Invariants)* | Exact `sum(k) = 0` antipodal pairing, `P0` single-writer epoch monotonicity, fail-closed `STALE_EPOCH_VETO`. | Formally enforced in code & tests |
+| **`REGISTER_I`** *(Research Horizon)* | Physical `NV⁻`/Ag-DNA/Perovskite matter-condensation transducers, macroscopic metric reallocation, and room-temperature volumetric `T_2` hardware arrays. | Conceptual blueprint horizon (not claimed as built physical matter-synthesis hardware) |
+
+### Quick Verification
+```bash
+python3 -m unittest discover -s qmk_v10/tests -v
+```
